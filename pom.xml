@@ -8,9 +8,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <evosuite.version>1.0.6</evosuite.version>
     </properties>
 
@@ -33,18 +33,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.evosuite.plugins</groupId>
-                <artifactId>evosuite-maven-plugin</artifactId>
-                <version>${evosuite.version}</version>
-                <executions>
-                    <execution>
-                        <goals><goal>prepare</goal></goals>
-                        <phase>process-test-classes</phase>
-                    </execution>
-                </executions>
-            </plugin>
-            
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
@@ -55,16 +43,21 @@
             </plugin>
 
             <plugin>
+                <groupId>org.evosuite.plugins</groupId>
+                <artifactId>evosuite-maven-plugin</artifactId>
+                <version>${evosuite.version}</version>
+                <executions>
+                    <execution>
+                        <goals><goal>prepare</goal></goals>
+                        <phase>process-test-classes</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.9.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.pitest</groupId>
-                        <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>1.1.0</version>
-                    </dependency>
-                </dependencies>
+                <version>1.7.0</version>
                 <configuration>
                     <targetClasses>
                         <param>br.com.kvervandi.geo.CalculadoraGeometrica</param>
@@ -75,6 +68,7 @@
                     <outputFormats>
                         <outputFormat>HTML</outputFormat>
                     </outputFormats>
+                    <testFramework>junit4</testFramework>
                 </configuration>
             </plugin>
         </plugins>
