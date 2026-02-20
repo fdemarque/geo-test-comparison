@@ -42,17 +42,30 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.evosuite.plugins</groupId>
                 <artifactId>evosuite-maven-plugin</artifactId>
                 <version>${evosuite.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.evosuite</groupId>
+                        <artifactId>evosuite-master</artifactId>
+                        <version>${evosuite.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>com.sun</groupId>
+                                <artifactId>tools</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <goals><goal>prepare</goal></goals>
                         <phase>process-test-classes</phase>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
 
             <plugin>
                 <groupId>org.pitest</groupId>

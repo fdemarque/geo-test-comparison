@@ -12,7 +12,6 @@ import org.junit.Before;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.evosuite.runtime.sandbox.Sandbox;
-import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
 
 @EvoSuiteClassExclude
 public class CalculadoraGeometrica_ESTest_scaffolding {
