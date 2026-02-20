@@ -1,10 +1,18 @@
+# Compilados e Maven
 target/
+
+# IDEs
 .idea/
 *.iml
 .classpath
 .project
 .settings/
+
+# OS e Logs
 .DS_Store
-.evosuite/
-tmp/
 *.log
+tmp/
+
+# Ferramentas da Atividade Prática
+.evosuite/
+evosuite.jar
